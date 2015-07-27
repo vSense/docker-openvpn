@@ -7,6 +7,6 @@ RUN apk add --update \
     curl \
     && rm -rf /var/cache/apk/*
 
-COPY run.cmd /bin/run.cmd
+COPY run.cmd /usr/bin/run
 
-CMD ["run.cmd"]
+ENTRYPOINT ["/usr/bin/run"]
