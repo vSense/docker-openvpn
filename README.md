@@ -7,8 +7,8 @@ Quick instructions:
 OpenVPN Server side :
 
 ```
-CID=$(docker run -d --privileged -p 1194:1194/udp -p 443:443/tcp vsense/openvpn:master)
-docker run -it -p 8080:8080 --volumes-from $CID jpetazzo/openvpn serveconfig
+CID=$(docker run -d --privileged -p 1194:1194/udp -p 443:443/tcp vsense/openvpn:server)
+docker run -it -p 8080:8080 --volumes-from $CID vsense/openvpn:server serveconfig
 ```
 
 The indicated URL contains the config file. It's ready to be used with OpenVPN client, as an OpenVPN profile or a config for OpenVPN cli (`--config`)
@@ -32,7 +32,7 @@ use `docker start` to restart the service without touching the configuration.
 
 ## How does it work?
 
-When the `jpetazzo/openvpn` image is started, it generates:
+When the `vsense/openvpn` image is started, it generates:
 
 - Diffie-Hellman parameters,
 - a private key,
