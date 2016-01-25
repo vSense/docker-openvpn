@@ -1,4 +1,4 @@
-FROM alpine:3.1
+FROM vsense/baseimage:alpine
 
 MAINTAINER vSense <docker@vsense.fr>
 
